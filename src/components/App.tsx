@@ -44,7 +44,7 @@ class App extends React.Component {
             console.log("getVideoTrack", this.state.localVideoWidth, this.state.localVideoHeight)
             this.localVideoRef.current!.srcObject = stream;
             this.state.inputVideoStream = stream
-            return new Promise((resolve, reject) => {
+            return new Promise<void>((resolve, reject) => {
               this.localVideoRef.current!.onloadedmetadata = () => {
                 resolve();
               };
